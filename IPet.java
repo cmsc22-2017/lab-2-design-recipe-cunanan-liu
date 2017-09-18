@@ -74,7 +74,7 @@ class NoPet implements IPet{
 
 //to represent a pet cat
 class Cat implements IPet {
-	String name;
+  String name;
   String kind;
   boolean longhaired;
 
@@ -134,7 +134,7 @@ class Dog implements IPet {
 class ExamplesPets{
   ExamplesPets(){}
 	
-		IPet ab = new NoPet();
+	  IPet ab = new NoPet();
     IPet a = new Cat("Xiumin","persian",false);
 	  IPet b = new Cat("Chen","chesire",true);
 	  IPet c = new Dog("Baekhyun","beagle",true);
@@ -159,10 +159,10 @@ class ExamplesPets{
     }
 		
 		boolean testPerish(Tester t) {
-			Person p = this.one.perish();
-			Person z = this.two.perish();
+		  Person p = this.one.perish();
+		  Person z = this.two.perish();
 		  return
-		  	t.checkExpect(p.name, "Suho") &&
+		    t.checkExpect(p.name, "Suho") &&
 		    t.checkExpect(p.pet, this.ab) &&
 		    t.checkExpect(p.age, 18) &&
 		    t.checkExpect(z.name, "Kai") &&
