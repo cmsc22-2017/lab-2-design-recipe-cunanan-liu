@@ -30,7 +30,7 @@ interface IPet {
 
 //to represent a pet owner
 class Person {
-	String name;
+  String name;
   IPet pet;
   int age;
 
@@ -43,9 +43,9 @@ class Person {
   boolean isOlder(Person other){
     if(this.age > other.age){
       return true;
-		}
-		else
-		  return false;
+    }
+    else
+      return false;
   }
   
   //--> Person
@@ -134,39 +134,39 @@ class Dog implements IPet {
 class ExamplesPets{
   ExamplesPets(){}
 	
-	  IPet ab = new NoPet();
+    IPet ab = new NoPet();
     IPet a = new Cat("Xiumin","persian",false);
-	  IPet b = new Cat("Chen","chesire",true);
-	  IPet c = new Dog("Baekhyun","beagle",true);
-	  IPet d = new Dog("Yeol","pug",false);
+    IPet b = new Cat("Chen","chesire",true);
+    IPet c = new Dog("Baekhyun","beagle",true);
+    IPet d = new Dog("Yeol","pug",false);
 		
-	  Person one = new Person("Suho",this.a,18);
-	  Person two = new Person("Kai",this.b,20);
-	  Person three = new Person("Sehun",this.c,5);
-	  Person four = new Person("Kyungsoo",this.d,20);
+    Person one = new Person("Suho",this.a,18);
+    Person two = new Person("Kai",this.b,20);
+    Person three = new Person("Sehun",this.c,5);
+    Person four = new Person("Kyungsoo",this.d,20);
 		
-	  boolean testIsOlder(Tester t) {
-		  return
-			  t.checkExpect(this.one.isOlder(this.two),false) &&
-			  t.checkExpect(this.one.isOlder(this.three),true) &&
-			  t.checkExpect(this.two.isOlder(this.four),false);
-	  }
-		
-		boolean testSameNamePet(Tester t) {
-		  return
-		    t.checkExpect(this.d.sameNamePet("Yeol"),true) &&
-		    t.checkExpect(this.a.sameNamePet("Harry"),false);
+    boolean testIsOlder(Tester t) {
+      return
+        t.checkExpect(this.one.isOlder(this.two),false) &&
+        t.checkExpect(this.one.isOlder(this.three),true) &&
+        t.checkExpect(this.two.isOlder(this.four),false);
     }
 		
-		boolean testPerish(Tester t) {
-		  Person p = this.one.perish();
-		  Person z = this.two.perish();
-		  return
-		    t.checkExpect(p.name, "Suho") &&
-		    t.checkExpect(p.pet, this.ab) &&
-		    t.checkExpect(p.age, 18) &&
-		    t.checkExpect(z.name, "Kai") &&
-		    t.checkExpect(z.pet, this.ab) &&
-		    t.checkExpect(z.age, 20);
-		}
+    boolean testSameNamePet(Tester t) {
+      return
+        t.checkExpect(this.d.sameNamePet("Yeol"),true) &&
+        t.checkExpect(this.a.sameNamePet("Harry"),false);
+    }
+		
+    boolean testPerish(Tester t) {
+      Person p = this.one.perish();
+      Person z = this.two.perish();
+      return
+        t.checkExpect(p.name, "Suho") &&
+        t.checkExpect(p.pet, this.ab) &&
+        t.checkExpect(p.age, 18) &&
+        t.checkExpect(z.name, "Kai") &&
+        t.checkExpect(z.pet, this.ab) &&
+        t.checkExpect(z.age, 20);
+    }
 }
